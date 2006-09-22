@@ -1,1 +1,1 @@
-puts IO.read(File.join(directory, 'README'))
+puts "Query Stats plugin successfully installed."
