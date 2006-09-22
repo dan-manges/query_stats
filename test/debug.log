@@ -1,0 +1,153 @@
+# Logfile created on Thu Sep 21 15:26:58 Eastern Daylight Time 2006 by logger.rb/1.5.2.7
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.000000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.000000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.000000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.000000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.000000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.000000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.010000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.000000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.000000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.000000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.000000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.000000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.010000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.000000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.000000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mCREATE TABLE named_things ("id" INTEGER PRIMARY KEY NOT NULL, "name" varchar(255)) [0m
+  [4;35;1mSQL (0.010000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(schema_info)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA table_info(named_things)[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things WHERE (named_things.id = 1) LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'irrelevant' WHERE id = 1[0m
+  [4;35;1mNamedThing Delete all (0.000000)[0m   [0mDELETE FROM named_things WHERE 1=1[0m
+  [4;36;1mActiveRecord::Base Load (0.010000)[0m   [0;1mSELECT * FROM named_things[0m
+  [4;35;1mSQL (0.000000)[0m   [0mINSERT INTO named_things ("name") VALUES('irrelevant')[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Load (0.000000)[0m   [0;1mSELECT * FROM named_things LIMIT 1[0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM named_things [0m
+  [4;35;1mNamedThing Load (0.000000)[0m   [0mSELECT * FROM named_things LIMIT 1[0m
+  [4;36;1mNamedThing Update (0.000000)[0m   [0;1mUPDATE named_things SET "name" = 'new name' WHERE id = 1[0m

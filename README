@@ -1,0 +1,34 @@
+= Query Stats Plugin
+
+The Query Stats plugin helps track database queries and performance.  It helps
+developers know the performance of their interaction with databases without
+constantly watching the logs.
+
+== Installation
+
+The plugin will automatically modify active record and add a helper named "queries" to access the QueryStatsHolder.
+
+One common use of Query Stats is to track queries executed in the controller separate from those executed in the view.
+Often queries executed in the view indicate an opportunity to use eager loading for performance benefits.
+
+If you would like to automatically label queries as to whether they were executed in the controller or the view, include QueryStats in your ApplicationController.
+
+Example:
+  class ApplicationController < ActionController::Base
+    include QueryStats
+  end
+  
+== Usage
+
+Call the "queries" helper or controller method to access data on the queries.
+  Example: queries.total_time
+See the methods available on QueryStatsHolder for functionality.
+
+If you include QueryStats in your controller, you can easily display statistics at the end of your layout, such as:
+  queries.count_with_label :controller
+  queries.count_with_label :view
+  queries.total_time
+  
+(If you do not wait until the end, you will not capture all the view queries)
+
+Copyright (c) 2006 Daniel Manges, released under the MIT license.

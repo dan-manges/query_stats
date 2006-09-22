@@ -1,0 +1,7 @@
+#named_thing_1:
+#  name: one
+<% 1.upto(5) do |i| %>
+named_thing_<%= i %>:
+  id: <%= i %>
+  name: name <%= i %>
+<% end %>
