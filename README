@@ -28,7 +28,9 @@ If you include QueryStats in your controller, you can easily display statistics 
   queries.count_with_label :controller
   queries.count_with_label :view
   queries.total_time
-  
-(If you do not wait until the end, you will not capture all the view queries)
+
+Note: The count_with_label method automatically excludes queries Rails executes to read table columns
+since those query results are cached in production.  To include those queries, call count_with_label(:label, false).
+Also, make sure you wait until the end of your view, or you will not capture all the view queries.
 
 Copyright (c) 2006 Daniel Manges, released under the MIT license.

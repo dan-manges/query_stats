@@ -17,6 +17,8 @@ class QueryStatsHolder
   # Gets or sets the current label to be applied to queries for custom tracking.
   # Including QueryStats in ApplicationController will label queries :controller or :view
   attr_accessor :label
+  # Gets the current query type
+  attr_reader   :query_type
   
   # Creates a new instance of QueryStatsHolder with an empty array of stats.
   def initialize

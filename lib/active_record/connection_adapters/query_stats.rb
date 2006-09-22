@@ -19,7 +19,7 @@ module ActiveRecord #:nodoc:
         base.class_eval do
           QUERY_METHODS.each do |method|
             define_method("#{method}_with_query_stats") do |*args|
-              queries.query_type = method
+              queries.query_type = method unless queries.query_type == :columns
               send "#{method}_without_query_stats", *args
             end
             alias_method "#{method}_without_query_stats", method
@@ -41,6 +41,7 @@ module ActiveRecord #:nodoc:
             result = execute_without_query_stats(*args)
           end
         queries.add(seconds, *args)
+        queries.query_type = nil
         result
       end
     end

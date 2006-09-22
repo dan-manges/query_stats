@@ -2,3 +2,4 @@
 
 * September 22, 2006
   * Fixed bug causing project test methods to fail when using assigns(:variable)
+  * Fixed bug which set label to :select after :columns, QueryStatsHolder#with_label will successfully ignore column queries.
