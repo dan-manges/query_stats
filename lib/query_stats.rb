@@ -5,21 +5,21 @@ module QueryStats
   def self.append_features(base) #:nodoc:
     base.class_eval do
       include InstanceMethods
-      alias_method :process_without_query_stats, :process
-      alias_method :process, :process_with_query_stats
+      alias_method :log_processing_without_query_stats, :log_processing
+      alias_method :log_processing, :log_processing_with_query_stats
       alias_method :render_without_query_stats, :render
       alias_method :render, :render_with_query_stats
     end
   end
   
   module InstanceMethods #:nodoc:
-    def process_with_query_stats(*args, &block)
-      queries.clear
-      queries.label = :controller
-      process_without_query_stats(*args, &block)
-    end
     
     protected
+      def log_processing_with_query_stats()
+        queries.clear
+        queries.label = :controller
+        log_processing_without_query_stats
+      end
     
       def render_with_query_stats(*args, &block)
         queries.label = :view

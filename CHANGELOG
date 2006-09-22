@@ -1,0 +1,4 @@
+= Query Stats Change Log
+
+* September 22, 2006
+  * Fixed bug causing project test methods to fail when using assigns(:variable)
