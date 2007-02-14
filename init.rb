@@ -5,5 +5,6 @@ if defined?(Rails::VERSION::STRING) && Rails::VERSION::STRING < "1.2.0"
 else
   ActiveRecord::Base.connection.class.send :include, QueryStats::Recorder
   ActionController::Base.send :include, QueryStats::Labeler
+  ActionController::Benchmarking.send :include, QueryStats::Logger
   ActionController::Base.helper QueryStats::Helper
 end

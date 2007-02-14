@@ -18,6 +18,7 @@ require 'query_stats/helper'
 require 'query_stats'
 require 'query_stats/holder'
 require 'query_stats/labeler'
+require 'query_stats/logger'
 require 'query_stats/recorder'
 require "#{File.dirname(__FILE__)}/../init"
 load(File.dirname(__FILE__) + "/schema.rb") if File.exist?(File.dirname(__FILE__) + "/schema.rb")

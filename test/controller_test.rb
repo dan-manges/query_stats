@@ -24,6 +24,7 @@ class ControllerTest < Test::Unit::TestCase
     end.new
     @request  = ActionController::TestRequest.new
     @response = ActionController::TestResponse.new
+    ActionController::Base.logger = Logger.new(@log = StringIO.new)
   end
   
   def test_queries_in_controller
@@ -57,5 +58,12 @@ class ControllerTest < Test::Unit::TestCase
     get :use_helper
     assert @response.success?
     assert_equal "1", @response.body
+  end
+  
+  def test_logger
+    get :both
+    assert @response.success?
+    
+    assert_match /6 queries/, @log.string
   end
 end
