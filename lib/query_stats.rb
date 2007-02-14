@@ -1,3 +1,4 @@
+__END__
 # This module should be included in ApplicationController to automatically label
 # queries as if they are executed before or after rendering starts.  The labels applied
 # will be <tt>:controller</tt> or <tt>:view</tt>

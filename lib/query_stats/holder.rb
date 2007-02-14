@@ -13,7 +13,9 @@
 # * name: The name passed to the adapter's execute method, may be nil.
 # * seconds: The execution time in seconds.
 # * label: A custom label which can be set to track queries.
-class QueryStatsHolder
+module QueryStats
+class Holder
+  LIMIT = 100
   # Gets or sets the current label to be applied to queries for custom tracking.
   # Including QueryStats in ApplicationController will label queries :controller or :view
   attr_accessor :label
@@ -22,22 +24,25 @@ class QueryStatsHolder
   
   # Creates a new instance of QueryStatsHolder with an empty array of stats.
   def initialize
-    @ignore_types = [:begin_db_transaction,
-                     :columns,
-                     :commit_db_transaction,
-                     :rollback_db_transaction]
+    @ignore_types = [
+      :begin_db_transaction,
+      :columns,
+      :commit_db_transaction,
+      :rollback_db_transaction
+    ]
     @stats = []
   end
 
   # Add data to the array of stats - should only be called by the active record connection adapter.
   def add(seconds, query, name = nil, *args) #:nodoc
+    @stats.shift if @stats.size >= LIMIT
     @stats << {
-                :sql     => query,
-                :name    => name,
-                :label   => @label,
-                :seconds => seconds,
-                :type    => @query_type
-              }
+      :sql     => query,
+      :name    => name,
+      :label   => @label,
+      :seconds => seconds,
+      :type    => @query_type
+    }
   end
 
   # Remove the current label and clear the array of stats.
@@ -64,7 +69,7 @@ class QueryStatsHolder
   # Set the query type - this should only be called automatically from the connection adapter.
   def query_type=(sym)
     @query_type = sym
-    @query_type = :select if @query_type.to_s.include?("select")
+    @query_type = :select if @query_type.to_s =~ /select/
   end
   
   # Return an array of query statistics collected.
@@ -74,21 +79,20 @@ class QueryStatsHolder
   
   # Return the total execution time for all queries in #stats.
   def total_time
-    total = 0
-    @stats.each {|q| total += q[:seconds]}
-    total
+    @stats.inject(0) { |sum,query| sum + query[:seconds] }
   end
   
   # Returns an array of statistics for queries with a given label.
   # Set ignore to true to ignore transaction and column queries.
   def with_label(label, ignore = true)
-    stats = @stats.collect {|q| q[:label] == label ? q : nil}.compact
+    stats = @stats.select { |q| q[:label] == label }
     ignore ? stats.delete_if {|q| @ignore_types.include?(q[:type])} : stats
   end
   
   # Returns an array of statistics for queries with a given type.
   def with_type(type)
-    @stats.collect {|q| q[:type] == type ? q : nil}.compact
+    @stats.select {|q| q[:type] == type }
   end
 
+end
 end
