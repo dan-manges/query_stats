@@ -1,9 +1,10 @@
 = Query Stats Change Log
 
 * February 14, 2007
-  * Plugin rewrite, tests work outside of vendor/plugins
+  * Fixed test_helper.rb so tests run without having the plugin in a Rails project.
   * No longer need to include QueryStats in ApplicationController
-  * Depends on Rails >= 1.2
+  * Depend on Rails >= 1.2
+  * Add query count to log.
 
 * September 22, 2006
   * Fixed bug causing project test methods to fail when using assigns(:variable)
