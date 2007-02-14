@@ -1,6 +1,3 @@
-# Include this file in your test by copying the following line to your test:
-#   require File.expand_path(File.dirname(__FILE__) + "/test_helper")
-
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 RAILS_ROOT = File.dirname(__FILE__)
 
@@ -10,6 +7,8 @@ require 'active_record'
 require 'active_record/fixtures'
 require 'active_support/binding_of_caller'
 require 'active_support/breakpoint'
+require 'action_controller'
+require 'action_controller/test_process'
 
 ActiveRecord::Base.configurations['test'] = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))
 ActiveRecord::Base.logger = Logger.new(File.dirname(__FILE__) + "/debug.log")
@@ -17,6 +16,7 @@ ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'
 
 require 'query_stats/helper'
 require 'query_stats/holder'
+require 'query_stats/labeler'
 require 'query_stats/recorder'
 require "#{File.dirname(__FILE__)}/../init"
 load(File.dirname(__FILE__) + "/schema.rb") if File.exist?(File.dirname(__FILE__) + "/schema.rb")
@@ -40,4 +40,7 @@ class Test::Unit::TestCase #:nodoc:
   self.use_instantiated_fixtures  = false
 
   # Add more helper methods to be used by all tests here...
+end
+
+class Person < ActiveRecord::Base
 end

@@ -1,8 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + "/test_helper")
 
-class Person < ActiveRecord::Base
-end
-
 class QueryStatsTest < Test::Unit::TestCase
   include QueryStats::Helper
   fixtures :people
