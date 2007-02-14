@@ -4,33 +4,23 @@ The Query Stats plugin helps track database queries and performance.  It helps
 developers know the performance of their interaction with databases without
 constantly watching the logs.
 
-== Installation
+== Requirements
 
-The plugin will automatically modify active record and add a helper named "queries" to access the QueryStatsHolder.
+* Rails >= 1.2
 
-One common use of Query Stats is to track queries executed in the controller separate from those executed in the view.
-Often queries executed in the view indicate an opportunity to use eager loading for performance benefits.
-
-If you would like to automatically label queries as to whether they were executed in the controller or the view, include QueryStats in your ApplicationController.
-
-Example:
-  class ApplicationController < ActionController::Base
-    include QueryStats
-  end
-  
 == Usage
 
-Call the "queries" helper or controller method to access data on the queries.
-  Example: queries.total_time
-See the methods available on QueryStatsHolder for functionality.
+Use the "queries" helper or controller method to access data on the queries.
+See the documentation on QueryStats::Holder for functionality.
 
-If you include QueryStats in your controller, you can easily display statistics at the end of your layout, such as:
-  queries.count_with_label :controller
-  queries.count_with_label :view
-  queries.total_time
+You can easily display statistics in your page footer, such as:
+  Queries in Controller: <%= queries.count_with_label :controller %>
+  Queries in View:       <%= queries.count_with_label :view %>
+  Query Time:            <%= queries.runtime %>
 
-Note: The count_with_label method automatically excludes queries Rails executes to read table columns
-since those query results are cached in production.  To include those queries, call count_with_label(:label, false).
-Also, make sure you wait until the end of your view, or you will not capture all the view queries.
+== Logging
 
-Copyright (c) 2006 Daniel Manges, released under the MIT license.
+QueryStats adds the number of queries to the log in the DB section:
+  Completed in 0.00642 (155 reqs/sec) | Rendering: 0.00228 (35%) | DB: 0.00247 (38%) 6 queries | 200 OK [http://test.host/]
+
+Copyright (c) 2006-2007 Dan Manges, released under the MIT license.

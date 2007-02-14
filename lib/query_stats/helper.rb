@@ -1,9 +1,11 @@
-# Helper methods to be added to ActionController::Base.helper
+# QueryStats::Helper
+
 module QueryStats
-module Helper
-  # Provides access to the QueryStatsHolder
-  def queries
-    ActiveRecord::Base.connection.queries
+  # Helper methods to access query stats data.
+  module Helper
+    # Provides access to the QueryStatsHolder
+    def queries
+      ActiveRecord::Base.connection.queries
+    end
   end
-end
 end
