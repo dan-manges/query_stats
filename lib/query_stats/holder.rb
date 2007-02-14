@@ -78,20 +78,21 @@ class Holder
   end
   
   # Return the total execution time for all queries in #stats.
-  def total_time
+  def runtime
     @stats.inject(0) { |sum,query| sum + query[:seconds] }
   end
+  alias :total_time :runtime
   
   # Returns an array of statistics for queries with a given label.
   # Set ignore to true to ignore transaction and column queries.
   def with_label(label, ignore = true)
     stats = @stats.select { |q| q[:label] == label }
-    ignore ? stats.delete_if {|q| @ignore_types.include?(q[:type])} : stats
+    ignore ? stats.reject { |q| @ignore_types.include?(q[:type]) } : stats
   end
   
   # Returns an array of statistics for queries with a given type.
   def with_type(type)
-    @stats.select {|q| q[:type] == type }
+    @stats.select { |q| q[:type] == type }
   end
 
 end

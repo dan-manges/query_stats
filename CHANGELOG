@@ -1,5 +1,10 @@
 = Query Stats Change Log
 
+* February 14, 2007
+  * Plugin rewrite, tests work outside of vendor/plugins
+  * No longer need to include QueryStats in ApplicationController
+  * Depends on Rails >= 1.2
+
 * September 22, 2006
   * Fixed bug causing project test methods to fail when using assigns(:variable)
   * Fixed bug which set label to :select after :columns, QueryStatsHolder#with_label will successfully ignore column queries.

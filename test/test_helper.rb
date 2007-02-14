@@ -15,6 +15,7 @@ ActiveRecord::Base.logger = Logger.new(File.dirname(__FILE__) + "/debug.log")
 ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'][ENV['DB'] || 'sqlite3'])
 
 require 'query_stats/helper'
+require 'query_stats'
 require 'query_stats/holder'
 require 'query_stats/labeler'
 require 'query_stats/recorder'
