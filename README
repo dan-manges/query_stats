@@ -8,6 +8,8 @@ constantly watching the logs.
 
 * Rails >= 1.2
 
+Does not work with Rails 2.0 (yet).
+
 == Usage
 
 Use the "queries" helper or controller method to access data on the queries.
@@ -22,5 +24,12 @@ You can easily display statistics in your page footer, such as:
 
 QueryStats adds the number of queries to the log in the DB section:
   Completed in 0.00642 (155 reqs/sec) | Rendering: 0.00228 (35%) | DB: 0.00247 (38%) 6 queries | 200 OK [http://test.host/]
+  
+== Contributors
 
-Copyright (c) 2006-2007 Dan Manges, released under the MIT license.
+* Dan Manges
+* Guillaume Dufloux
+
+== License
+
+Released under the MIT license.
