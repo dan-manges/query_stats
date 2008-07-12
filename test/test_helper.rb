@@ -3,17 +3,25 @@ RAILS_ROOT = File.dirname(__FILE__)
 
 require 'test/unit'
 require 'rubygems'
-gem "rails", "1.2.6"
+gem "rails", ENV["RAILS_VERSION"] || "1.2.6"
+require "rails/version"
 require 'active_record'
 require 'active_record/fixtures'
-require 'active_support/binding_of_caller'
-require 'active_support/breakpoint'
+# require 'active_support/binding_of_caller'
+# require 'active_support/breakpoint'
 require 'action_controller'
 require 'action_controller/test_process'
 
 ActiveRecord::Base.configurations['test'] = YAML::load(IO.read(File.dirname(__FILE__) + '/database.yml'))
 ActiveRecord::Base.logger = Logger.new(File.dirname(__FILE__) + "/debug.log")
 ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'][ENV['DB'] || 'sqlite3'])
+
+if Rails::VERSION::MAJOR == 1
+  (class << ActiveRecord::Base.connection; self; end).class_eval do
+    def clear_query_cache; end
+  end
+end
+
 
 require 'query_stats/helper'
 require 'query_stats'

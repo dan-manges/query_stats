@@ -7,15 +7,15 @@ class ControllerTest < Test::Unit::TestCase
     ActionController::Routing::Routes.draw { |map| map.connect ':controller/:action' }
     @controller = Class.new(ActionController::Base) do
       def controller_queries
-        3.times { Person.count }
+        3.times { Person.count; ActiveRecord::Base.connection.clear_query_cache }
         render :nothing => true
       end
       def view_queries
-        render :inline => "<% 5.times { Person.count } %>"
+        render :inline => "<% 5.times { Person.count; ActiveRecord::Base.connection.clear_query_cache } %>"
       end
       def both
-        2.times { Person.count }
-        render :inline => '<% 4.times { Person.count } %>'
+        2.times { Person.count; ActiveRecord::Base.connection.clear_query_cache }
+        render :inline => '<% 4.times { Person.count; ActiveRecord::Base.connection.clear_query_cache } %>'
       end
       def use_helper
         Person.count
