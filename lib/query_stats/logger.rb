@@ -12,6 +12,7 @@ module QueryStats
     def perform_action_with_query_stats
       perform_action_without_query_stats
       response.headers["X-QueryCount"] = ActiveRecord::Base.connection.queries.count.to_s
+      response.headers["X-QueryRuntime"] = "%.5f" % ActiveRecord::Base.connection.queries.runtime.to_s
     end
   
     def self.included(base) #:nodoc:

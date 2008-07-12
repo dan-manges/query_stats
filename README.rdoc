@@ -1,14 +1,6 @@
 = Query Stats Plugin
 
-The Query Stats plugin helps track database queries and performance.  It helps
-developers know the performance of their interaction with databases without
-constantly watching the logs.
-
-== Requirements
-
-* Rails >= 1.2
-
-Does not work with Rails 2.0 (yet).
+The Query Stats plugin tracks database queries.
 
 == Usage
 
@@ -24,7 +16,12 @@ You can easily display statistics in your page footer, such as:
 
 QueryStats adds the number of queries to the log in the DB section:
   Completed in 0.00642 (155 reqs/sec) | Rendering: 0.00228 (35%) | DB: 0.00247 (38%) 6 queries | 200 OK [http://test.host/]
-  
+
+== Response Headers
+
+* X-QueryCount will be set to the number of queries
+* X-QueryRuntime will be set to the db runtime
+
 == Contributors
 
 * Dan Manges

@@ -29,14 +29,14 @@ class ControllerTest < Test::Unit::TestCase
   
   def test_queries_in_controller
     get :controller_queries
-    assert @response.success?
+    assert_response :success
     
     assert_equal 3, queries.count_with_label(:controller)
     assert_equal 0, queries.count_with_label(:view)
     assert_equal 3, queries.count
   end
   
-  def test_queries_in_response_Header
+  def test_queries_in_response_header
     get :controller_queries
     assert_response :success
     assert_equal "3", @response.headers["X-QueryCount"]
@@ -44,7 +44,7 @@ class ControllerTest < Test::Unit::TestCase
   
   def test_queries_in_view
     get :view_queries
-    assert @response.success?
+    assert_response :success
     
     assert_equal 0, queries.count_with_label(:controller)
     assert_equal 5, queries.count_with_label(:view)
@@ -53,7 +53,7 @@ class ControllerTest < Test::Unit::TestCase
   
   def test_queries_in_both
     get :both
-    assert @response.success?
+    assert_response :success
     
     assert_equal 2, queries.count_with_label(:controller)
     assert_equal 4, queries.count_with_label(:view)
@@ -62,14 +62,20 @@ class ControllerTest < Test::Unit::TestCase
   
   def test_using_helper
     get :use_helper
-    assert @response.success?
+    assert_response :success
     assert_equal "1", @response.body
   end
   
   def test_logger
     get :both
-    assert @response.success?
+    assert_response :success
     
     assert_match /6 queries/, @log.string
+  end
+  
+  def test_query_runtime_in_response_header
+    get :both
+    assert_response :success
+    assert_match /^0\.\d{5}$/, @response.headers["X-QueryRuntime"]
   end
 end
