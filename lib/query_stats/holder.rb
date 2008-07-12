@@ -38,6 +38,7 @@ module QueryStats
     # Add data to the array of stats - should only be called by the active record connection adapter.
     def add(seconds, query, name = nil, *args) #:nodoc:
       @stats.shift if @stats.size >= LIMIT
+      return if @ignore_types.include?(@query_type)
       @stats << {
         :sql     => query,
         :name    => name,
