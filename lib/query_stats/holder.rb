@@ -17,7 +17,7 @@ module QueryStats
   # * seconds: The execution time in seconds.
   # * label: A custom label which can be set to track queries.
   class Holder
-    LIMIT = 100
+    LIMIT = 1_000
     # Gets or sets the current label to be applied to queries for custom tracking.
     # Including QueryStats in ApplicationController will label queries :controller or :view
     attr_accessor :label
