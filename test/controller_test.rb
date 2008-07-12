@@ -36,6 +36,12 @@ class ControllerTest < Test::Unit::TestCase
     assert_equal 3, queries.count
   end
   
+  def test_queries_in_response_Header
+    get :controller_queries
+    assert_response :success
+    assert_equal "3", @response.headers["X-QueryCount"]
+  end
+  
   def test_queries_in_view
     get :view_queries
     assert @response.success?
