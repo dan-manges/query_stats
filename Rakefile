@@ -33,7 +33,6 @@ namespace :test do
   task :multi do
     RAILS_VERSIONS.each do |rails_version|
       DB_ADAPTERS.each do |db_adapter|
-        next if rails_version == "1.2.6" && db_adapter == "mysql"
         sh "RAILS_VERSION='#{rails_version}' DB='#{db_adapter}' rake test > /dev/null 2>&1"
       end
     end

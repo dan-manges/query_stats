@@ -25,9 +25,8 @@ QueryStats adds the number of queries to the log in the DB section:
 == Requirements
 
 Tests pass with:
-* Rails 1.2.6: sqlite3
-* Rails 2.0.2: sqlite3, mysql
-* Rails 2.1.0: sqlite3, mysql
+* Rails: 1.2.6, 2.0.2, 2.1.0
+* Adapters: sqlite3, mysql
 
 == Maintainer
 
