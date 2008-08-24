@@ -3,13 +3,9 @@
 module QueryStats
   # QueryStatsHolder holds data on queries executed.
   # QueryStatsHolder#stats will return an array of hashes containing the following keys:
-  # * type: The type of SQL query based on methods in ActiveRecord::ConnectionAdapters::AbstractAdapter
-  #   * begin_db_transaction
-  #   * columns
-  #   * commit_db_transaction
+  # * type: The type of SQL query
   #   * delete
   #   * insert
-  #   * rollback_db_transaction
   #   * select
   #   * update
   # * sql: The SQL executed.
@@ -68,7 +64,7 @@ module QueryStats
   
     # Return the total execution time for all queries in #stats.
     def runtime
-      @stats.inject(0) { |sum,query| sum + query[:seconds] }
+      @stats.map { |query| query[:seconds] }.sum
     end
     alias :total_time :runtime
   
