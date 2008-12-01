@@ -26,13 +26,15 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
 end
 
 DB_ADAPTERS = %w[sqlite3 mysql]
-RAILS_VERSIONS = %w[1.2.6 2.0.2 2.1.0]
+RAILS_VERSIONS = %w[1.2.6 2.0.2 2.1.1 2.2.2]
 
 namespace :test do
   desc "test with multiple versions of rails and multiple adapters"
   task :multi do
     RAILS_VERSIONS.each do |rails_version|
+      puts "Testing with Rails #{rails_version}"
       DB_ADAPTERS.each do |db_adapter|
+        puts " - Adapter: #{db_adapter}"
         sh "RAILS_VERSION='#{rails_version}' DB='#{db_adapter}' rake test > /dev/null 2>&1"
       end
     end
